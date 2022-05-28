@@ -1,7 +1,5 @@
 import React, {useState} from "react";
 import {Link} from "react-router-dom";
-import LoginWithFacebook from "./LoginWithFacebook";
-import LoginWithGoogle from "./LoginWithGoogle";
 import Typography from '@mui/material/Typography';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
@@ -52,12 +50,6 @@ const SignIn = () => {
                     <Typography sx={styles.title} variant={"h4"}>
                         Entrar
                     </Typography>
-                </Grid>
-                <Grid item md={12} xs={12}>
-                    <LoginWithFacebook buttonWidth={'60%'}/>
-                </Grid>
-                <Grid item md={12} xs={12}>
-                    <LoginWithGoogle buttonWidth={'60%'}/>
                 </Grid>
                 <Grid sx={{marginTop: "20px", marginBottom: "20px"}} item md={5} xs={5}>
                     <Divider/>
