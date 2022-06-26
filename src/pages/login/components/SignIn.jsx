@@ -5,7 +5,6 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
-import {Divider} from "@mui/material";
 import {useAuth} from "../../../providers/Auth";
 
 const styles = {
@@ -48,19 +47,8 @@ const SignIn = () => {
             <Grid container spacing={2}>
                 <Grid item md={12} xs={12}>
                     <Typography sx={styles.title} variant={"h4"}>
-                        Entrar
+                        Login
                     </Typography>
-                </Grid>
-                <Grid sx={{marginTop: "20px", marginBottom: "20px"}} item md={5} xs={5}>
-                    <Divider/>
-                </Grid>
-                <Grid  item md={2} xs={2}>
-                    <Typography sx={styles.textOr} variant={"h5"}>
-                        Ou
-                    </Typography>
-                </Grid>
-                <Grid sx={{marginTop: "20px", marginBottom: "20px"}} item md={5} xs={5}>
-                    <Divider/>
                 </Grid>
                 <Grid item md={12} xs={12}>
                     <TextField sx={styles.textField} size={"small"} variant={"outlined"} label={"E-mail"}
@@ -70,17 +58,24 @@ const SignIn = () => {
                     <TextField sx={styles.textField} size={"small"} variant={"outlined"} type={"password"} label={"Senha"}
                                onChange={(event) => handleOnChangeData("password", event)}/>
                 </Grid>
+                <Grid item md={12} xs={12} sx={{marginLeft: '40%'}}>
+                    <Button sx={styles.button} color={"primary"} variant={"contained"} onClick={handleOnClick}>
+                        Entrar
+                    </Button>
+                </Grid>
                 <Grid item md={12} xs={12}>
-                    <Link to={'/login/cadastro'}>
-                        <Typography sx={{color: '#727273'}}>
-                            Não possui cadastro?
+                    <Link to={'/login/cadastro/professor'}>
+                        <Typography sx={{color: '#727273', textAlign: 'start', marginLeft: '20%'}}>
+                            Professor, crie sua conta
                         </Typography>
                     </Link>
                 </Grid>
                 <Grid item md={12} xs={12}>
-                    <Button sx={styles.button} color={"primary"} variant={"contained"} onClick={handleOnClick}>
-                        Entrar
-                    </Button>
+                    <Link to={'/login/cadastro/aluno'}>
+                        <Typography sx={{color: '#727273', textAlign: 'start', marginLeft: '20%'}}>
+                            Aluno, crie sua conta
+                        </Typography>
+                    </Link>
                 </Grid>
             </Grid>
         </Box>
